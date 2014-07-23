@@ -1,6 +1,6 @@
 # lepek
 
-_lepek_ is a template project for Express CoffeeScript.
+_lepek_ is a template project for Express CoffeeScript. This project is heavily inspired by [express-coffee] (http://twilson63.github.io/express-coffee)
 
 # Requirements
 
