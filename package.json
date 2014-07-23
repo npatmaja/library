@@ -18,6 +18,7 @@
 	    "should": "*",
 	    "supertest": "*",
 	    "request": "*",
-	    "chai": "*"
+	    "chai": "*",
+	    "supervisor": "*"
 	}
 }
