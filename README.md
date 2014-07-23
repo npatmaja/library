@@ -1,6 +1,6 @@
 # lepek
 
-~~lepek~~ is a template project for Express CoffeeScript.
+_lepek is a template project for Express CoffeeScript.
 
 # Requirements
 
@@ -14,7 +14,7 @@
 # Installation
 To use this template, run the following commands:
 ```
-git clone http://github.com/npatmaja/lepek [project name]
+git clone https://github.com/npatmaja/lepek.git [project name]
 cd [project name]
 npm install
 npm install mocha -g
