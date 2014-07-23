@@ -1,0 +1,23 @@
+{
+	"name": "lepek",
+	"version": "0.0.1",
+	"private": true,
+	"author": "Nauval Atmaja <nauval.atmaja@gmail.com> (https://github.com/npatmaja)",
+	"scripts": {
+		"test": "node node_modules/coffee-script/bin/cake test"
+	},
+	"dependencies": {
+		"express": "4.*",
+		"coffee-script": "1.7.x",
+		"ect": "~0.5",
+		"stylus": "0.43.x"
+	},
+	"devDependencies": {
+		"coffee-script": "*",
+	    "mocha": "*",
+	    "should": "*",
+	    "supertest": "*",
+	    "request": "*",
+	    "chai": "*"
+	}
+}
