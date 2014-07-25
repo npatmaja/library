@@ -1,7 +1,12 @@
 express = require 'express'
 stylus = require 'stylus'
 ECT = require 'ect'
-ectRenderer = ECT({ watch: true, root: __dirname + '/../views', ext: '.ect'})
+
+#### Create ECT renderer
+# get current working directory of the process,
+# which also the root of the project
+__root = process.cwd() 
+ectRenderer = ECT({ watch: true, root: __root + '/views', ext: '.ect'})
 
 #### Application initialization
 # Create app instance
@@ -21,3 +26,4 @@ routes = require './routes'
 routes(app)
 
 module.exports = app
+
