@@ -19,6 +19,7 @@
 	    "supertest": "*",
 	    "request": "*",
 	    "chai": "*",
-	    "supervisor": "*"
+	    "supervisor": "*",
+	    "which": "*"
 	}
 }

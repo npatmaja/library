@@ -1,4 +1,8 @@
+#### Cakefile
+# mostly take from express-coffee (https://github.com/twilson63/express-coffee)
+
 fs = require 'fs'
+which = require 'which'
 {spawn, exec} = require 'child_process'
 
 # ANSI Terminal Colors
@@ -10,17 +14,32 @@ reset = '\x1B[0m'
 log = (message, color, explanation) ->
   console.log color + message + reset + ' ' + (explanation or '')
 
+build = (callback) ->
+	options = ['-c','-b', '-o', '.app', 'src']
+	cmd = which.sync 'coffee'
+	coffee = spawn cmd, options
+	coffee.stdout.pipe process.stdout
+	coffee.stderr.pipe process.stderr
+	coffee.on 'exit', (status) -> callback?() if status is 0
+
+test = (callback) ->
+	options = ['--compilers', 'coffee:coffee-script', '--reporter', 'spec', '--require', 'coffee-script', '--colors']
+	cmd = which.sync 'mocha'
+	fixture = spawn 'mocha', options
+	fixture.stdout.pipe process.stdout
+	fixture.stderr.pipe process.stderr
+	fixture.on 'exit', (status) -> callback?() if status is 0
+
+task 'build', 'build project', ->
+	build -> log ':)', green
+
 task 'test', 'run test', ->
-	exec 'NODE_ENV=test mocha --compilers coffee:coffee-script
-		  --reporter spec 
-		  --require coffee-script
-		  --colors', (err, output) ->
-		  	(output += err) if err
-		  	console.log output
+	build -> test -> log ':)', green
 
 task 'dev', 'start dev env', ->
 	options = ['-c', '-b', '-w', '-o', '.app', 'src']
-	coffee = spawn 'coffee', options
+	cmd = which.sync 'coffee'
+	coffee = spawn cmd, options
 	coffee.stdout.pipe process.stdout
 	coffee.stderr.pipe process.stderr
 	log 'Watching coffee files', green
