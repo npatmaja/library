@@ -21,7 +21,7 @@ npm install mocha -g
 ```
 To run the tests:
 ```
-cake dev
+cake test
 ```
 
 To run the server:
