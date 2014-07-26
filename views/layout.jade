@@ -10,6 +10,23 @@ head
   meta(name='author', content='')
   // Mobile Specific
   meta(name="viewport", content="width=device-width, initial-scale=1.0")
-  
+  != css('lib/bootstrap.min.css')
+  != css('cover.css')
+
 body
-  block content
+  .site-wrapper
+    .site-wrapper-inner
+      .cover-container
+        div(class="masthead clearfix")
+          .inner
+            block navigation
+
+        div(class="inner cover")
+          block content
+
+        .mastfoot
+          .inner
+            block footer
+              
+  != js('lib/require.js')
+  != js('lib/bootstrap.min.js')

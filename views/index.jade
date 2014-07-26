@@ -1,5 +1,26 @@
 extends layout
+block navigation
+  h3.masthead-brand Lepek
+  ul(class="nav masthead-nav")
+    li.active
+      a(href="#", target="_blank") Home
+    li
+      a(href="#", target="_blank") About
+    li
+      a(href="#", target="_blank") Contact
+      div(class="inner cover")
 
 block content
-	.container
-		p Hello world
+  h1.cover-heading Lepek an Express CoffeeScript project template
+  p.lead 
+    | <b>lepek</b> is a template project for Express CoffeeScript. This project is heavily inspired by 
+    a(href="http://twilson63.github.io/express-coffee", target="_blank") express-coffee.
+  p.lead
+    | This page is built based on the 
+    a(href="http://getbootstrap.com/examples/cover/", target="_blank") Cover
+    |  template.
+
+block footer
+  p 
+    | template by 
+    a(href="https://twitter.com/mdo", target="_blank") @mdo

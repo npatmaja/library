@@ -10,6 +10,7 @@ _lepek_ is a template project for Express CoffeeScript. This project is heavily 
 * Stylus
 * Mocha
 * Chai
+* Twitter bootsrap
 
 # Installation
 To use this template, run the following commands:
