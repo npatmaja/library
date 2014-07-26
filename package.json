@@ -9,8 +9,9 @@
 	"dependencies": {
 		"express": "4.*",
 		"coffee-script": "1.7.x",
-		"ect": "~0.5",
-		"stylus": "0.43.x"
+		"jade": "~1.4.*",
+		"stylus": "0.43.x",
+		"connect-assets": "4.*"
 	},
 	"devDependencies": {
 		"coffee-script": "*",

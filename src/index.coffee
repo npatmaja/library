@@ -1,24 +1,23 @@
 express = require 'express'
 stylus = require 'stylus'
-ECT = require 'ect'
+assets = require 'connect-assets'
 
-#### Create ECT renderer
 # get current working directory of the process,
 # which also the root of the project
 __root = process.cwd() 
-ectRenderer = ECT({ watch: true, root: __root + '/views', ext: '.ect'})
 
 #### Application initialization
 # Create app instance
 app = express()
+app.use assets()
+app.use express.static (__root + '/public')
 
 # Define Port & Environment
 app.port = process.env.PORT or process.env.VMC_APP_PORT or 3000
 env = process.env.NODE_ENV or "development"
 
 # Set view engine
-app.set 'view engine', 'ect'
-app.engine 'ect', ectRenderer.render
+app.set 'view engine', 'jade'
 
 #### Routes
 # Routes initialization

@@ -6,7 +6,7 @@ _lepek_ is a template project for Express CoffeeScript. This project is heavily 
 
 * NodeJs
 * Express
-* ECT template engine
+* Jade
 * Stylus
 * Mocha
 * Chai
