@@ -3,9 +3,6 @@
 	"version": "0.0.1",
 	"private": true,
 	"author": "Nauval Atmaja <nauval.atmaja@gmail.com> (https://github.com/npatmaja)",
-	"scripts": {
-		"test": "node node_modules/coffee-script/bin/cake test"
-	},
 	"dependencies": {
 		"express": "4.*",
 		"coffee-script": "1.7.x",
