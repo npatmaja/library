@@ -10,23 +10,18 @@ head
   meta(name='author', content='')
   // Mobile Specific
   meta(name="viewport", content="width=device-width, initial-scale=1.0")
-  != css('lib/bootstrap.min.css')
-  != css('cover.css')
+  //- != css('lib/bootstrap.min.css')
+  != css('screen.css')
 
 body
-  .site-wrapper
-    .site-wrapper-inner
-      .cover-container
-        div(class="masthead clearfix")
-          .inner
-            block navigation
-
-        div(class="inner cover")
-          block content
-
-        .mastfoot
-          .inner
-            block footer
+  block content
               
-  != js('lib/require.js')
+  != js('lib/jquery.min.js')
+  != js('lib/underscore-min.js')
+  != js('lib/backbone-min.js')
   != js('lib/bootstrap.min.js')
+  != js('models/book.js')
+  != js('collections/library.js')
+  != js('views/book.js')
+  != js('views/library.js')
+  != js('app.js')

@@ -1,26 +1,34 @@
 extends layout
-block navigation
-  h3.masthead-brand Lepek
-  ul(class="nav masthead-nav")
-    li.active
-      a(href="#", target="_blank") Home
-    li
-      a(href="#", target="_blank") About
-    li
-      a(href="#", target="_blank") Contact
-      div(class="inner cover")
-
 block content
-  h1.cover-heading Lepek an Express CoffeeScript project template
-  p.lead 
-    | <b>lepek</b> is a template project for Express CoffeeScript. This project is heavily inspired by 
-    a(href="http://twilson63.github.io/express-coffee", target="_blank") express-coffee.
-  p.lead
-    | This page is built based on the 
-    a(href="http://getbootstrap.com/examples/cover/", target="_blank") Cover
-    |  template.
+  #books 
+    form(id="addBook", action="#")
+      div
+        label(for="coverImage") Cover Image: 
+        input(id="coverImage", type="file")
+        label(for="title") Title:
+        input(id="title", type="text", placeholder="A title you desire")
+        label(for="author") Author:
+        input(id="author", type="text", placeholder="The author of the book")
+        label(for="releaseDate") Release Date:
+        input(id="releaseDate", type="text", placeholder="The release date")
+        label(for="keywords") Keywords:
+        input(id="keywords", type="text", placeholder="Keywords")
+        button(id="add") Add
+  
+    .bookContainer
+      img(src="img/placeholder.jpg", height="100px")
+      ul
+        li Title
+        li Author
+        li Release Date
+        li Keywords
+      button(class="delete") Delete
 
-block footer
-  p 
-    | template by 
-    a(href="https://twitter.com/mdo", target="_blank") @mdo
+  script(type="text/template", id="bookTemplate")
+    img(src!="<%= coverImage %>", height="100px")
+    ul
+      li <%= title %> 
+      li <%= author %>
+      li <%= releaseDate %>
+      li <%= keywords %>
+    button(class="delete") Delete
