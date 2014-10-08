@@ -1,33 +1,5 @@
-# lepek
-
-_lepek_ is a template project for Express CoffeeScript. This project is heavily inspired by [express-coffee] (http://twilson63.github.io/express-coffee)
-
-# Requirements
-
-* NodeJs
-* Express
-* Jade
-* Stylus
-* Mocha
-* Chai
-
-# Installation
-To use this template, run the following commands:
-```
-git clone https://github.com/npatmaja/lepek.git [project name]
-cd [project name]
-npm install
-npm install mocha -g
-```
-To run the tests:
-```
-cake test
-```
-
-To run the server:
-```
-cake dev
-```
+# Library
+The second exercise of [Backcbone Fundamentals](https://github.com/addyosmani/backbone-fundamentals) book.
 
 # License
 MIT license
