@@ -14,21 +14,12 @@ block content
         label(for="keywords") Keywords:
         input(id="keywords", type="text", placeholder="Keywords")
         button(id="add") Add
-  
-    .bookContainer
-      img(src="img/placeholder.jpg", height="100px")
-      ul
-        li Title
-        li Author
-        li Release Date
-        li Keywords
-      button(class="delete") Delete
 
   script(type="text/template", id="bookTemplate")
     img(src!="<%= coverImage %>", height="100px")
     ul
       li <%= title %> 
       li <%= author %>
-      li <%= releaseDate %>
-      li <%= keywords %>
+      li <%= $.format.date(new Date(releaseDate), 'MMMM yyyy') %>
+      li <% _.each(keywords, function(keyobj) {%><%= keyobj.keyword %><%}) %> 
     button(class="delete") Delete
