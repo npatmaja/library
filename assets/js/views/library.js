@@ -19,8 +19,9 @@ app.LibraryView = Backbone.View.extend({
       if ($(el).val() !== '') {
         if (el.id === 'keywords') {
           formData[el.id] = [];
-          _.each($(el).val().split(' '), function (keyword) {
-            formData[el.id].push({ 'keyword': keyword });
+          var pattern = /("[^"]+")|\S+/g;
+          _.each(regexArray($(el).val(), pattern), function (keyword) {
+            formData[el.id].push({ 'keyword': keyword.replace(/"/g, "") });
           });
         } else if (el.id === 'releaseDate') {
           formData[el.id] = $('#releaseDate').datepicker('getDate').getTime();
@@ -56,3 +57,12 @@ app.LibraryView = Backbone.View.extend({
     this.$el.append(bookView.render().el);
   }
 });
+
+var regexArray = function (string, pattern) {
+  var result = [];
+  var r;
+  while ((r = pattern.exec(string)) !== null) {
+    result.push(r[0]);
+  }
+  return result;
+}

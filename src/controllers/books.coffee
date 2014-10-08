@@ -15,7 +15,6 @@ module.exports =
       keywords: req.body.keywords
     )
     console.log "body: " + JSON.stringify req.body
-    console.log "keywords: " + JSON.stringify req.body.key
     book.save (err) ->
       unless err
         res.send book

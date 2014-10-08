@@ -7,7 +7,7 @@ Keywords = new mongoose.Schema(
 Book = new mongoose.Schema(
     title: String
     author: String
-    releaseData: Date
+    releaseDate: Date
     keywords: [Keywords]
   )
 
