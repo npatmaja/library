@@ -50,6 +50,10 @@ body {
   clear: both;
 }
 
+#addBook {
+  float: left;
+}
+
 #addBook div {
   width: 490px;
 }
@@ -62,4 +66,13 @@ body {
   clear: both;
   font-size: 0;
   line-height: 0;
+}
+
+#imageCoverUpload {
+  float: left;
+  width: 200px;
+}
+
+#clear {
+  clear: both;
 }

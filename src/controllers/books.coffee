@@ -9,12 +9,13 @@ module.exports =
 
   create: (req, res) ->
     book = new Book(
+      imageCover: req.body.imageCover
       title: req.body.title
       author: req.body.author
       releaseDate: req.body.releaseDate
       keywords: req.body.keywords
     )
-    console.log "body: " + JSON.stringify req.body
+    console.log book
     book.save (err) ->
       unless err
         res.send book

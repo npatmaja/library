@@ -20,3 +20,17 @@ describe 'General', ->
         .expect(404, {},
                 done
         )
+
+describe 'cover', ->
+  describe 'when post something', ->
+    it 'should return ok', ->
+      request(app)
+        .post('/api/cover')
+        .send( { path: 'path'} )
+        .expect(200, 'path')
+        .end (err, res) ->
+          if err
+            done err
+          else
+            done()
+          

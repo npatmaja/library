@@ -5,6 +5,7 @@ Keywords = new mongoose.Schema(
   )
 
 Book = new mongoose.Schema(
+    imageCover: String
     title: String
     author: String
     releaseDate: Date

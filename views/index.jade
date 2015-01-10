@@ -1,10 +1,14 @@
 extends layout
 block content
   #books 
+    div#imageCoverUpload
+      img#uploadedImage(height="100px")
+      form(id="uploadCoverForm", method="post", action="/api/cover", enctype="multipart/form-data")
+        input(id="coverImageUpload", type="file", name="coverImageUpload")
+      div#status
     form(id="addBook", action="#")
       div
-        label(for="coverImage") Cover Image: 
-        input(id="coverImage", type="file")
+        input(id="imageCover", type="hidden")
         label(for="title") Title:
         input(id="title", type="text", placeholder="A title you desire")
         label(for="author") Author:
@@ -14,9 +18,10 @@ block content
         label(for="keywords") Keywords:
         input(id="keywords", type="text", placeholder="Keywords")
         button(id="add") Add
-
+    #clear
+    #bookList
   script(type="text/template", id="bookTemplate")
-    img(src!="<%= coverImage %>", height="100px")
+    img(src!="<%= imageCover %>", height="100px")
     ul
       li <%= title %> 
       li <%= author %>

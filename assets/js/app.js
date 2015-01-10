@@ -2,5 +2,6 @@ var app = app || {};
 
 $(function () {
   $('#releaseDate').datepicker();
-  new app.LibraryView();
+  var mainView = new app.LibraryView();
+  mainView.start();
 })

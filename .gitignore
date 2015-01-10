@@ -1,3 +1,4 @@
 node_modules/
 .app
 .DS_Stores
+public/img/covers
