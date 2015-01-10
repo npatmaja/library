@@ -1,9 +1,5 @@
 # Library
-The second exercise of [Backcbone Fundamentals](https://github.com/addyosmani/backbone-fundamentals) book.
-
-# Todo
-1. Upload image when adding a book.
-2. Edit a book.
+Simple library built using Backbone.js, Node.js and mongodb. The second exercise of [Backcbone Fundamentals](https://github.com/addyosmani/backbone-fundamentals) book.
 
 # License
 MIT license
