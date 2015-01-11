@@ -15,7 +15,6 @@ module.exports =
       releaseDate: req.body.releaseDate
       keywords: req.body.keywords
     )
-    console.log book
     book.save (err) ->
       unless err
         res.send book
@@ -46,8 +45,7 @@ module.exports =
           console.log err
 
   delete: (req, res) ->
-    Book.findById req.params.id, (err, book) ->
-      book.remove (err) ->
+    Book.findByIdAndRemove req.params.id, (err, book) ->
         unless err
           console.log 'book deleted'
           res.send book
